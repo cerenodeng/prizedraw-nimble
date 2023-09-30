@@ -8,8 +8,10 @@
 	</head>
 	<body>
 		<h1>Prize Draw Nimble</h1>
-		<input name="fullName" type="text" />
-		<button type="button" hx-post="/users" hx-trigger="click" hx-target=".users" hx-swap="outerHTML">Add</button>
+		<form>
+			<input name="fullName" type="text" />
+			<button type="button" hx-post="/users" hx-trigger="click" hx-target=".users" hx-swap="outerHTML">Add</button>
+		</form>
 		<div class="users">Users</div>
 	</body>
 </html>
