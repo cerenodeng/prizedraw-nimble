@@ -17,10 +17,18 @@ async function fetchHandler(request) {
 		const formData = await request.formData();
 		const fullName = formData.get('fullName');
 		const database = new Database('prizedraw.sqlite');
-		const query = database.query(`insert into users values ($fullName)`);
-		const data = query.values({ $fullName: fullName });
+		let query = database.query(`insert into users (fullName) values ($fullName)`);
+		query.all({ $fullName: fullName });
+		query = database.query('select * from users');
+		const data = query.all();
 		console.log(data);
+		let output = '<ul>';
+		for (const item of data) {
+			output += `<li>${item.fullName}</li>`;
+		}
+		output += '</ul>';
 		database.close();
+		return new Response(output);
 	}
 	return new Response(Bun.file('404.html'), { status: 404 });
 }
