@@ -4,14 +4,20 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Prize Draw Nimble</title>
+		<link href="/assets/global.css" rel="stylesheet" />
 		<script src="/assets/htmx@1.9.6.min.js"></script>
 	</head>
-	<body>
+	<body class="flex flex-col gap-y-10 items-center p-20">
 		<h1>Prize Draw Nimble</h1>
-		<form>
-			<input name="fullName" type="text" />
-			<button type="button" hx-post="/users" hx-trigger="click" hx-target=".users" hx-swap="innerHTML">Add</button>
+		<form class="flex flex-col gap-y-3">
+			<div class="flex flex-col">
+				<label for="fullName">Full Name</label>
+				<input id="fullName" class="text" name="fullName" type="text" placeholder="Full Name" />
+			</div>
+			<button class="primary" type="button" hx-post="/users" hx-trigger="click" hx-target=".users" hx-swap="innerHTML">
+				Add
+			</button>
 		</form>
-		<div class="users">Users</div>
+		<div class="users"></div>
 	</body>
 </html>

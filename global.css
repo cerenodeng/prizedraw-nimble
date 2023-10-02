@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+	@apply text-3xl font-bold;
+}
+
+h2 {
+	@apply text-2xl font-semibold;
+}
+
+table {
+	@apply table-fixed divide-y divide-neutral-200 border-b border-neutral-200;
+}
+
+thead tr {
+	@apply divide-x divide-neutral-200/50;
+}
+
+thead tr th {
+	@apply bg-neutral-100 p-3 text-left text-xl font-semibold;
+}
+
+tbody {
+	@apply divide-y divide-neutral-100;
+}
+
+tbody tr {
+	@apply cursor-pointer divide-x divide-neutral-100 hover:bg-emerald-50;
+}
+
+tbody tr td {
+	@apply p-4 text-lg font-normal;
+}
+
+label {
+	@apply px-4 py-2 text-base font-medium text-neutral-500;
+}
+
+input.text {
+	@apply border border-x-0 border-t-0 border-emerald-100 p-4 text-lg font-normal focus:border-emerald-200 focus:outline-none;
+}
+
+button.primary {
+	@apply border border-emerald-100 bg-emerald-50 p-4 text-lg font-normal hover:bg-emerald-100;
+}

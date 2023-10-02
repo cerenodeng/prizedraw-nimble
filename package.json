@@ -1,17 +1,16 @@
 {
-  "name": "prizedraw-nimble",
-  "module": "index.js",
-  "devDependencies": {
-    "bun-types": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "scripts": {
-    "dev": "bun --hot run index.js"
-  },
-  "type": "module",
-  "dependencies": {
-    "tailwindcss": "^3.3.3"
-  }
+	"name": "prizedraw-nimble",
+	"module": "index.js",
+	"devDependencies": {
+		"bun-types": "latest",
+		"concurrently": "^8.2.1",
+		"tailwindcss": "^3.3.3"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"scripts": {
+		"dev": "concurrently \"bun tailwindcss -i ./global.css -o ./assets/global.css --watch\" \"bun --hot run index.js\""
+	},
+	"type": "module"
 }
